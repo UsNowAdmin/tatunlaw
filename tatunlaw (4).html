@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jonathan Tatun, Esq. — Family & Domestic Relations Law in Suffolk County, New York">
+<meta name="theme-color" content="#080d1a">
+<title>Jonathan Tatun, Esq. — Family Law · Suffolk County, NY</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#080d1a;
+  --navy2:#0d1526;
+  --navy3:#111d32;
+  --blue:#1a4a7a;
+  --blue-light:#4a8fd4;
+  --blue-bright:#6aaee8;
+  --gold:#c9a84c;
+  --gold-dim:#9a7a30;
+  --cream:#e8e4d8;
+  --muted:#8a9ab8;
+  --border:#1e2d4a;
+  --border2:#243558;
+}
+html,body{height:100%;background:var(--navy);color:var(--cream);font-family:'Barlow Condensed',sans-serif;scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.9rem 2.5rem;
+  border-bottom:1px solid var(--border);
+  background:var(--navy);
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:52px;
+}
+.nav-name{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:2px;color:var(--cream);}
+.nav-contact-link{
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--blue-bright);text-decoration:none;
+  border-bottom:1px solid var(--border2);padding-bottom:2px;
+  transition:color 0.2s,border-color 0.2s;
+}
+.nav-contact-link:hover{color:var(--cream);border-color:var(--blue-light);}
+
+.screen{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  margin-top:52px;
+  min-height:calc(100vh - 52px);
+}
+
+.left{
+  background:linear-gradient(160deg,#0d1b3a 0%,#080d1a 100%);
+  border-right:1px solid var(--border);
+  padding:3.5rem 3rem;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.left::before{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:radial-gradient(ellipse at 20% 40%,#1a3a6a18 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--blue-bright);margin-bottom:1.8rem;}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,6.5vw,96px);line-height:0.9;letter-spacing:1px;color:var(--cream);}
+.hero-name span{color:var(--blue-bright);}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(18px,2.2vw,30px);letter-spacing:4px;color:var(--gold);margin:1.4rem 0 0.4rem;}
+.hero-divider{width:36px;height:2px;background:linear-gradient(90deg,var(--blue-light),var(--blue-bright));margin:1.4rem 0;}
+.hero-phone{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.6vw,34px);letter-spacing:3px;
+  color:var(--cream);text-decoration:none;
+  border-bottom:1px solid var(--blue);padding-bottom:3px;
+  transition:color 0.2s,border-color 0.2s;display:inline-block;
+}
+.hero-phone:hover{color:var(--blue-bright);border-color:var(--blue-bright);}
+.hero-email{display:block;margin-top:0.6rem;font-size:14px;letter-spacing:1.5px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.hero-email:hover{color:var(--blue-bright);}
+.hero-addr{margin-top:1.8rem;font-size:12px;letter-spacing:1px;color:var(--border2);font-weight:300;line-height:1.7;}
+
+.right{
+  background:var(--navy);
+  padding:3.5rem 3rem;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:2.5rem;overflow:hidden;
+}
+.section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--blue-bright);margin-bottom:1.2rem;}
+
+.skills-list{display:flex;flex-direction:column;border:1px solid var(--border2);}
+.skill-item{padding:0.75rem 1.2rem;border-bottom:1px solid var(--border);font-size:14px;letter-spacing:0.4px;color:var(--cream);transition:background 0.15s;}
+.skill-item:last-child{border-bottom:none;}
+.skill-item:hover{background:var(--navy3);}
+
+.about-text{font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;letter-spacing:0.2px;}
+.about-text strong{color:var(--cream);font-weight:500;}
+.badge-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.9rem;}
+.badge{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--blue-bright);border:1px solid var(--border2);padding:4px 10px;}
+.confidential{font-size:11px;letter-spacing:0.8px;color:var(--gold-dim);border-left:2px solid var(--gold-dim);padding-left:8px;margin-top:0.8rem;font-weight:300;}
+
+.contact-section{padding:3.5rem 3rem;border-top:1px solid var(--border);background:var(--navy2);}
+.contact-inner{display:grid;grid-template-columns:1fr 2fr;gap:3.5rem;max-width:900px;}
+.contact-direct{margin-top:1.5rem;}
+.contact-row{margin-bottom:1rem;}
+.contact-row .lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:2px;}
+.contact-row .val{font-size:15px;color:var(--cream);}
+.contact-row .val a{color:var(--cream);text-decoration:none;}
+.contact-row .val a:hover{color:var(--blue-bright);}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem 1.2rem;}
+.form-grid .full{grid-column:1/-1;}
+.form-row label{display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:4px;}
+.form-row input,.form-row textarea,.form-row select{
+  width:100%;background:var(--navy3);border:1px solid var(--border2);
+  color:var(--cream);font-family:'Barlow Condensed',sans-serif;
+  font-size:15px;padding:9px 11px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;
+}
+.form-row input:focus,.form-row textarea:focus,.form-row select:focus{border-color:var(--blue-light);}
+.form-row textarea{resize:vertical;min-height:80px;}
+.form-row select option{background:var(--navy3);}
+.btn-submit{
+  margin-top:0.9rem;background:transparent;border:1px solid var(--blue-light);
+  color:var(--blue-bright);font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  padding:10px 28px;cursor:pointer;transition:background 0.2s,color 0.2s;
+}
+.btn-submit:hover{background:var(--blue);color:var(--cream);}
+.form-success{display:none;margin-top:0.8rem;font-size:13px;letter-spacing:1px;color:var(--blue-bright);border-left:2px solid var(--blue-light);padding-left:10px;}
+
+footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;color:var(--border2);letter-spacing:0.5px;}
+
+@media(max-width:1024px){
+  .screen{grid-template-columns:1fr;height:auto;}
+  .left{border-right:none;border-bottom:1px solid var(--border);padding:3rem 2rem;}
+  .right{padding:3rem 2rem;gap:2rem;}
+  .contact-inner{grid-template-columns:1fr;gap:2rem;}
+  .form-grid{grid-template-columns:1fr 1fr;}
+  .contact-section{padding:3rem 2rem;}
+  footer,nav{padding-left:2rem;padding-right:2rem;}
+}
+@media(max-width:560px){
+  .left,.right{padding:2.5rem 1.5rem;}
+  .contact-section{padding:2.5rem 1.5rem;}
+  .form-grid{grid-template-columns:1fr;}
+  footer,nav{padding-left:1.5rem;padding-right:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Jonathan Tatun, Esq.</div>
+  <a class="nav-contact-link" href="#contact">Contact ↓</a>
+</nav>
+
+<div class="screen">
+  <div class="left">
+    <div class="hero-eyebrow">Family &amp; Domestic Relations Law · Suffolk County, New York</div>
+    <div class="hero-name">Jonathan<br><span>Tatun</span></div>
+    <div class="hero-title">Counselor &amp; Attorney at Law</div>
+    <div class="hero-divider"></div>
+    <a href="tel:6318971717" class="hero-phone">631-897-1717</a>
+    <a href="mailto:jt@tatunlaw.com" class="hero-email">jt@tatunlaw.com</a>
+    <div class="hero-addr">497 Belmore Avenue<br>Islip Terrace, NY 11752</div>
+  </div>
+
+  <div class="right">
+    <div>
+      <div class="section-label">Experience &amp; Skill</div>
+      <div class="skills-list">
+        <div class="skill-item">High Quality and Effective Representation</div>
+        <div class="skill-item">Family Court &amp; Domestic Relations Law</div>
+        <div class="skill-item">Admitted to the Practice of Law in 2004</div>
+        <div class="skill-item">Member: New York State Bar Association &amp; Suffolk County Bar Association</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">About</div>
+      <div class="about-text">
+        <p><strong>Jonathan Tatun</strong> is a solo family law attorney based in Islip Terrace, New York, practicing in Suffolk County Family and Supreme Courts. Committed to direct, effective representation for families navigating the court system.</p>
+        <div class="badge-row">
+          <div class="badge">New York State Bar Association</div>
+          <div class="badge">Suffolk County Bar Association</div>
+        </div>
+        <div class="confidential">All messages and communications are kept strictly confidential.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label">Contact</div>
+      <p style="font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:220px;">For consultation or more information — contact Attorney Jonathan Tatun by phone, text, or email.</p>
+      <div class="contact-direct">
+        <div class="contact-row">
+          <span class="lbl">Phone or Text</span>
+          <span class="val"><a href="tel:6318971717">631-897-1717</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="lbl">Fax</span>
+          <span class="val">631-857-7800</span>
+        </div>
+        <div class="contact-row">
+          <span class="lbl">Email</span>
+          <span class="val"><a href="mailto:jt@tatunlaw.com">jt@tatunlaw.com</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Full Name</label>
+          <input type="text" id="cf-name" placeholder="Your name">
+        </div>
+        <div class="form-row">
+          <label>Phone</label>
+          <input type="tel" id="cf-phone" placeholder="Best number">
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" id="cf-email" placeholder="Your email">
+        </div>
+        <div class="form-row">
+          <label>Matter Type</label>
+          <select id="cf-matter">
+            <option value="">Select one</option>
+            <option>Divorce / Separation</option>
+            <option>Custody / Visitation</option>
+            <option>Child Support</option>
+            <option>Order of Protection</option>
+            <option>Document Review</option>
+            <option>Other Family Court</option>
+          </select>
+        </div>
+        <div class="form-row full">
+          <label>Your Message</label>
+          <textarea id="cf-msg" placeholder="A few sentences about your situation"></textarea>
+        </div>
+      </div>
+      <button class="btn-submit" onclick="handleSubmit()">Send →</button>
+      <div class="form-success" id="cf-success">Received — you'll hear back within one business day.</div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Jonathan Tatun, Esq. · 497 Belmore Avenue, Islip Terrace NY 11752</footer>
+
+<script>
+function handleSubmit(){
+  const name=document.getElementById('cf-name').value.trim();
+  const phone=document.getElementById('cf-phone').value.trim();
+  const email=document.getElementById('cf-email').value.trim();
+  const matter=document.getElementById('cf-matter').value;
+  const message=document.getElementById('cf-msg').value.trim();
+  if(!name||(!phone&&!email)){alert('Please enter your name and at least one way to reach you.');return;}
+  const btn=document.querySelector('.btn-submit');
+  btn.textContent='Sending...';btn.disabled=true;
+  fetch('https://script.google.com/macros/s/AKfycbytGImIdL8Cxt7Avr_R32U_s4g-rDLsvi9WH1Tg_bhH12Ud0J8n10MP8KF_kVv4b7he_Q/exec',{
+    method:'POST',
+    body:JSON.stringify({name,phone,email,matter,message})
+  })
+  .then(()=>{
+    document.getElementById('cf-success').style.display='block';
+    ['cf-name','cf-phone','cf-email','cf-matter','cf-msg'].forEach(id=>document.getElementById(id).value='');
+    btn.textContent='Send →';btn.disabled=false;
+  })
+  .catch(()=>{
+    document.getElementById('cf-success').style.display='block';
+    ['cf-name','cf-phone','cf-email','cf-matter','cf-msg'].forEach(id=>document.getElementById(id).value='');
+    btn.textContent='Send →';btn.disabled=false;
+  });
+}
+</script>
+</body>
+</html>
