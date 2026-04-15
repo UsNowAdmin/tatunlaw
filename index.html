@@ -53,24 +53,72 @@ nav{
   background:linear-gradient(160deg,#0d1b3a 0%,#080d1a 100%);
   border-right:1px solid var(--border);
   padding:3.5rem 3rem;
-  display:flex;flex-direction:column;justify-content:center;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;
   position:relative;overflow:hidden;
 }
 .left::before{
   content:'';position:absolute;top:0;left:0;right:0;bottom:0;
-  background:radial-gradient(ellipse at 20% 40%,#1a3a6a18 0%,transparent 65%);
-  pointer-events:none;
+  background:radial-gradient(ellipse at 50% 40%,#1a3a6a18 0%,transparent 65%);
+  pointer-events:none;z-index:0;
 }
-.hero-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--blue-bright);margin-bottom:1.8rem;}
-.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,6.5vw,96px);line-height:0.9;letter-spacing:1px;color:var(--cream);}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--blue-bright);margin-bottom:1.8rem;
+  max-width:280px;line-height:1.8;
+  opacity:0;animation:reveal 1.2s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay:0.2s;
+}
+.hero-name-wrap{position:relative;display:block;}
+.hero-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(64px,8vw,116px);
+  line-height:0.9;letter-spacing:3px;color:var(--cream);
+  opacity:0;animation:reveal 1.4s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay:0.6s;
+}
 .hero-name span{color:var(--blue-bright);}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(18px,2.2vw,30px);letter-spacing:4px;color:var(--gold);margin:1.4rem 0 0.4rem;}
-.hero-divider{width:36px;height:2px;background:linear-gradient(90deg,var(--blue-light),var(--blue-bright));margin:1.4rem 0;}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(20px,2.8vw,40px);
+  letter-spacing:4px;color:var(--gold);margin:1.4rem 0 0.4rem;
+  white-space:nowrap;
+  opacity:0;animation:reveal 1.4s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay:1.2s;
+}
+.hero-divider{
+  width:36px;height:2px;
+  background:linear-gradient(90deg,var(--blue-light),var(--blue-bright));
+  margin:1.4rem auto;
+  opacity:0;animation:reveal 1s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay:1.8s;
+}
 .hero-phone{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.6vw,34px);letter-spacing:3px;
-  color:var(--cream);text-decoration:none;
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,40px);letter-spacing:4px;
+  color:var(--cream);text-decoration:none;display:inline-block;
   border-bottom:1px solid var(--blue);padding-bottom:3px;
-  transition:color 0.2s,border-color 0.2s;display:inline-block;
+  transition:color 0.2s,border-color 0.2s;
+  opacity:0;animation:reveal 1.2s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay:2.4s;
+}
+.hero-phone:hover{color:var(--blue-bright);border-color:var(--blue-bright);}
+.hero-email{
+  display:block;margin-top:0.6rem;font-size:14px;letter-spacing:1.5px;
+  color:var(--muted);text-decoration:none;transition:color 0.2s;
+  opacity:0;animation:reveal 1.2s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay:3.0s;
+}
+.hero-email:hover{color:var(--blue-bright);}
+.hero-addr{
+  margin-top:1.8rem;font-size:12px;letter-spacing:1px;
+  color:var(--border2);font-weight:300;line-height:1.7;
+  opacity:0;animation:reveal 1.2s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay:3.6s;
+}
+@keyframes reveal{
+  0%{opacity:0;transform:translateY(18px) scale(0.96);}
+  60%{opacity:1;}
+  100%{opacity:1;transform:translateY(0) scale(1);}
 }
 .hero-phone:hover{color:var(--blue-bright);border-color:var(--blue-bright);}
 .hero-email{display:block;margin-top:0.6rem;font-size:14px;letter-spacing:1.5px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
@@ -80,13 +128,19 @@ nav{
 .right{
   background:var(--navy);
   padding:3.5rem 3rem;
-  display:flex;flex-direction:column;justify-content:center;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
   gap:2.5rem;overflow:hidden;
 }
-.section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--blue-bright);margin-bottom:1.2rem;}
+.section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--blue-bright);margin-bottom:1.2rem;text-align:center;}
+.right>div{width:100%;max-width:420px;}
 
 .skills-list{display:flex;flex-direction:column;border:1px solid var(--border2);}
-.skill-item{padding:0.75rem 1.2rem;border-bottom:1px solid var(--border);font-size:14px;letter-spacing:0.4px;color:var(--cream);transition:background 0.15s;}
+.skill-item{
+  padding:1rem 1.2rem;border-bottom:1px solid var(--border);
+  font-size:clamp(18px,2.2vw,26px);letter-spacing:1px;text-transform:uppercase;
+  color:var(--cream);font-weight:500;line-height:1.3;
+  transition:background 0.15s;
+}
 .skill-item:last-child{border-bottom:none;}
 .skill-item:hover{background:var(--navy3);}
 
@@ -96,34 +150,34 @@ nav{
 .badge{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--blue-bright);border:1px solid var(--border2);padding:4px 10px;}
 .confidential{font-size:11px;letter-spacing:0.8px;color:var(--gold-dim);border-left:2px solid var(--gold-dim);padding-left:8px;margin-top:0.8rem;font-weight:300;}
 
-.contact-section{padding:3.5rem 3rem;border-top:1px solid var(--border);background:var(--navy2);}
-.contact-inner{display:grid;grid-template-columns:1fr 2fr;gap:3.5rem;max-width:900px;}
-.contact-direct{margin-top:1.5rem;}
-.contact-row{margin-bottom:1rem;}
-.contact-row .lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:2px;}
-.contact-row .val{font-size:15px;color:var(--cream);}
+.contact-section{padding:2rem 3rem;border-top:1px solid var(--border);background:var(--navy2);}
+.contact-inner{display:grid;grid-template-columns:auto 1fr;gap:2.5rem;max-width:900px;align-items:start;}
+.contact-direct{display:flex;flex-wrap:wrap;gap:0.4rem 2rem;margin-top:0.8rem;}
+.contact-row{display:flex;align-items:baseline;gap:0.5rem;}
+.contact-row .lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);white-space:nowrap;}
+.contact-row .val{font-size:13px;color:var(--cream);letter-spacing:0.5px;}
 .contact-row .val a{color:var(--cream);text-decoration:none;}
 .contact-row .val a:hover{color:var(--blue-bright);}
 
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem 1.2rem;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.6rem;}
 .form-grid .full{grid-column:1/-1;}
-.form-row label{display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:4px;}
+.form-row label{display:block;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-light);margin-bottom:3px;}
 .form-row input,.form-row textarea,.form-row select{
   width:100%;background:var(--navy3);border:1px solid var(--border2);
   color:var(--cream);font-family:'Barlow Condensed',sans-serif;
-  font-size:15px;padding:9px 11px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;
+  font-size:13px;padding:6px 9px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;
 }
 .form-row input:focus,.form-row textarea:focus,.form-row select:focus{border-color:var(--blue-light);}
-.form-row textarea{resize:vertical;min-height:80px;}
+.form-row textarea{resize:vertical;min-height:52px;}
 .form-row select option{background:var(--navy3);}
 .btn-submit{
-  margin-top:0.9rem;background:transparent;border:1px solid var(--blue-light);
+  margin-top:0.6rem;background:transparent;border:1px solid var(--blue-light);
   color:var(--blue-bright);font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;letter-spacing:3px;text-transform:uppercase;
-  padding:10px 28px;cursor:pointer;transition:background 0.2s,color 0.2s;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  padding:7px 22px;cursor:pointer;transition:background 0.2s,color 0.2s;
 }
 .btn-submit:hover{background:var(--blue);color:var(--cream);}
-.form-success{display:none;margin-top:0.8rem;font-size:13px;letter-spacing:1px;color:var(--blue-bright);border-left:2px solid var(--blue-light);padding-left:10px;}
+.form-success{display:none;margin-top:0.6rem;font-size:12px;letter-spacing:1px;color:var(--blue-bright);border-left:2px solid var(--blue-light);padding-left:8px;}
 
 footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;color:var(--border2);letter-spacing:0.5px;}
 
@@ -131,14 +185,14 @@ footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;col
   .screen{grid-template-columns:1fr;height:auto;}
   .left{border-right:none;border-bottom:1px solid var(--border);padding:3rem 2rem;}
   .right{padding:3rem 2rem;gap:2rem;}
-  .contact-inner{grid-template-columns:1fr;gap:2rem;}
+  .contact-inner{grid-template-columns:1fr;gap:1.5rem;}
   .form-grid{grid-template-columns:1fr 1fr;}
-  .contact-section{padding:3rem 2rem;}
+  .contact-section{padding:2rem;}
   footer,nav{padding-left:2rem;padding-right:2rem;}
 }
 @media(max-width:560px){
   .left,.right{padding:2.5rem 1.5rem;}
-  .contact-section{padding:2.5rem 1.5rem;}
+  .contact-section{padding:1.5rem;}
   .form-grid{grid-template-columns:1fr;}
   footer,nav{padding-left:1.5rem;padding-right:1.5rem;}
 }
@@ -153,8 +207,10 @@ footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;col
 
 <div class="screen">
   <div class="left">
-    <div class="hero-eyebrow">Family &amp; Domestic Relations Law · Suffolk County, New York</div>
-    <div class="hero-name">Jonathan<br><span>Tatun</span></div>
+    <div class="hero-eyebrow">Family &amp; Domestic Relations Law<br>· Suffolk County, New York</div>
+    <div class="hero-name-wrap">
+      <div class="hero-name">Jonathan<br><span>Tatun</span></div>
+    </div>
     <div class="hero-title">Counselor &amp; Attorney at Law</div>
     <div class="hero-divider"></div>
     <a href="tel:6318971717" class="hero-phone">631-897-1717</a>
@@ -169,7 +225,7 @@ footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;col
         <div class="skill-item">High Quality and Effective Representation</div>
         <div class="skill-item">Family Court &amp; Domestic Relations Law</div>
         <div class="skill-item">Admitted to the Practice of Law in 2004</div>
-        <div class="skill-item">Member: New York State Bar Association &amp; Suffolk County Bar Association</div>
+        <div class="skill-item" style="font-size:clamp(14px,1.8vw,22px);">Member: New York State Bar Association &amp; Suffolk County Bar Association</div>
       </div>
     </div>
     <div>
@@ -190,10 +246,9 @@ footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;col
   <div class="contact-inner">
     <div>
       <div class="section-label">Contact</div>
-      <p style="font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;max-width:220px;">For consultation or more information — contact Attorney Jonathan Tatun by phone, text, or email.</p>
       <div class="contact-direct">
         <div class="contact-row">
-          <span class="lbl">Phone or Text</span>
+          <span class="lbl">Phone / Text</span>
           <span class="val"><a href="tel:6318971717">631-897-1717</a></span>
         </div>
         <div class="contact-row">
@@ -204,14 +259,17 @@ footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;col
           <span class="lbl">Email</span>
           <span class="val"><a href="mailto:jt@tatunlaw.com">jt@tatunlaw.com</a></span>
         </div>
+        <div class="contact-row">
+          <span class="lbl">Address</span>
+          <span class="val">497 Belmore Ave · Islip Terrace NY</span>
+        </div>
       </div>
     </div>
-
     <div>
       <div class="form-grid">
         <div class="form-row">
-          <label>Full Name</label>
-          <input type="text" id="cf-name" placeholder="Your name">
+          <label>Name</label>
+          <input type="text" id="cf-name" placeholder="Full name">
         </div>
         <div class="form-row">
           <label>Phone</label>
@@ -222,19 +280,19 @@ footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;col
           <input type="email" id="cf-email" placeholder="Your email">
         </div>
         <div class="form-row">
-          <label>Matter Type</label>
+          <label>Matter</label>
           <select id="cf-matter">
-            <option value="">Select one</option>
+            <option value="">Select</option>
             <option>Divorce / Separation</option>
             <option>Custody / Visitation</option>
             <option>Child Support</option>
             <option>Order of Protection</option>
             <option>Document Review</option>
-            <option>Other Family Court</option>
+            <option>Other</option>
           </select>
         </div>
         <div class="form-row full">
-          <label>Your Message</label>
+          <label>Message</label>
           <textarea id="cf-msg" placeholder="A few sentences about your situation"></textarea>
         </div>
       </div>
