@@ -151,30 +151,31 @@ nav{
 .confidential{font-size:11px;letter-spacing:0.8px;color:var(--gold-dim);border-left:2px solid var(--gold-dim);padding-left:8px;margin-top:0.8rem;font-weight:300;}
 
 .contact-section{padding:2rem 3rem;border-top:1px solid var(--border);background:var(--navy2);}
-.contact-inner{display:grid;grid-template-columns:auto 1fr;gap:2.5rem;max-width:900px;align-items:start;}
-.contact-direct{display:flex;flex-wrap:wrap;gap:0.4rem 2rem;margin-top:0.8rem;}
+.contact-inner{display:flex;flex-direction:column;gap:1.8rem;max-width:900px;}
+.contact-top{display:flex;flex-wrap:wrap;gap:0.4rem 2.5rem;align-items:center;}
+.contact-top .section-label{margin-bottom:0;margin-right:1rem;}
 .contact-row{display:flex;align-items:baseline;gap:0.5rem;}
 .contact-row .lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);white-space:nowrap;}
-.contact-row .val{font-size:13px;color:var(--cream);letter-spacing:0.5px;}
+.contact-row .val{font-size:14px;color:var(--cream);letter-spacing:0.5px;}
 .contact-row .val a{color:var(--cream);text-decoration:none;}
 .contact-row .val a:hover{color:var(--blue-bright);}
 
-.form-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.6rem;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem 1.2rem;}
 .form-grid .full{grid-column:1/-1;}
 .form-row label{display:block;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-light);margin-bottom:3px;}
 .form-row input,.form-row textarea,.form-row select{
   width:100%;background:var(--navy3);border:1px solid var(--border2);
   color:var(--cream);font-family:'Barlow Condensed',sans-serif;
-  font-size:13px;padding:6px 9px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;
+  font-size:14px;padding:8px 10px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;
 }
 .form-row input:focus,.form-row textarea:focus,.form-row select:focus{border-color:var(--blue-light);}
-.form-row textarea{resize:vertical;min-height:52px;}
+.form-row textarea{resize:vertical;min-height:70px;}
 .form-row select option{background:var(--navy3);}
 .btn-submit{
   margin-top:0.6rem;background:transparent;border:1px solid var(--blue-light);
   color:var(--blue-bright);font-family:'Barlow Condensed',sans-serif;
   font-size:11px;letter-spacing:3px;text-transform:uppercase;
-  padding:7px 22px;cursor:pointer;transition:background 0.2s,color 0.2s;
+  padding:8px 24px;cursor:pointer;transition:background 0.2s,color 0.2s;
 }
 .btn-submit:hover{background:var(--blue);color:var(--cream);}
 .form-success{display:none;margin-top:0.6rem;font-size:12px;letter-spacing:1px;color:var(--blue-bright);border-left:2px solid var(--blue-light);padding-left:8px;}
@@ -185,15 +186,15 @@ footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;col
   .screen{grid-template-columns:1fr;height:auto;}
   .left{border-right:none;border-bottom:1px solid var(--border);padding:3rem 2rem;}
   .right{padding:3rem 2rem;gap:2rem;}
-  .contact-inner{grid-template-columns:1fr;gap:1.5rem;}
-  .form-grid{grid-template-columns:1fr 1fr;}
   .contact-section{padding:2rem;}
+  .contact-top{gap:0.6rem 1.5rem;}
   footer,nav{padding-left:2rem;padding-right:2rem;}
 }
 @media(max-width:560px){
   .left,.right{padding:2.5rem 1.5rem;}
   .contact-section{padding:1.5rem;}
   .form-grid{grid-template-columns:1fr;}
+  .contact-top{flex-direction:column;gap:0.6rem;}
   footer,nav{padding-left:1.5rem;padding-right:1.5rem;}
 }
 </style>
@@ -244,58 +245,56 @@ footer{padding:1.2rem 3rem;border-top:1px solid var(--border);font-size:11px;col
 
 <div class="contact-section" id="contact">
   <div class="contact-inner">
-    <div>
+    <div class="contact-top">
       <div class="section-label">Contact</div>
-      <div class="contact-direct">
-        <div class="contact-row">
-          <span class="lbl">Phone / Text</span>
-          <span class="val"><a href="tel:6318971717">631-897-1717</a></span>
-        </div>
-        <div class="contact-row">
-          <span class="lbl">Fax</span>
-          <span class="val">631-857-7800</span>
-        </div>
-        <div class="contact-row">
-          <span class="lbl">Email</span>
-          <span class="val"><a href="mailto:jt@tatunlaw.com">jt@tatunlaw.com</a></span>
-        </div>
-        <div class="contact-row">
-          <span class="lbl">Address</span>
-          <span class="val">497 Belmore Ave · Islip Terrace NY</span>
-        </div>
+      <div class="contact-row">
+        <span class="lbl">Phone / Text</span>
+        <span class="val"><a href="tel:6318971717">631-897-1717</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="lbl">Fax</span>
+        <span class="val">631-857-7800</span>
+      </div>
+      <div class="contact-row">
+        <span class="lbl">Email</span>
+        <span class="val"><a href="mailto:jt@tatunlaw.com">jt@tatunlaw.com</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="lbl">Address</span>
+        <span class="val">497 Belmore Ave · Islip Terrace NY</span>
+      </div>
+    </div>
+    <div class="form-grid">
+      <div class="form-row">
+        <label>Name</label>
+        <input type="text" id="cf-name" placeholder="Full name">
+      </div>
+      <div class="form-row">
+        <label>Phone</label>
+        <input type="tel" id="cf-phone" placeholder="Best number">
+      </div>
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" id="cf-email" placeholder="Your email">
+      </div>
+      <div class="form-row">
+        <label>Matter</label>
+        <select id="cf-matter">
+          <option value="">Select</option>
+          <option>Divorce / Separation</option>
+          <option>Custody / Visitation</option>
+          <option>Child Support</option>
+          <option>Order of Protection</option>
+          <option>Document Review</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row full">
+        <label>Message</label>
+        <textarea id="cf-msg" placeholder="A few sentences about your situation"></textarea>
       </div>
     </div>
     <div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>Name</label>
-          <input type="text" id="cf-name" placeholder="Full name">
-        </div>
-        <div class="form-row">
-          <label>Phone</label>
-          <input type="tel" id="cf-phone" placeholder="Best number">
-        </div>
-        <div class="form-row">
-          <label>Email</label>
-          <input type="email" id="cf-email" placeholder="Your email">
-        </div>
-        <div class="form-row">
-          <label>Matter</label>
-          <select id="cf-matter">
-            <option value="">Select</option>
-            <option>Divorce / Separation</option>
-            <option>Custody / Visitation</option>
-            <option>Child Support</option>
-            <option>Order of Protection</option>
-            <option>Document Review</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-row full">
-          <label>Message</label>
-          <textarea id="cf-msg" placeholder="A few sentences about your situation"></textarea>
-        </div>
-      </div>
       <button class="btn-submit" onclick="handleSubmit()">Send →</button>
       <div class="form-success" id="cf-success">Received — you'll hear back within one business day.</div>
     </div>
